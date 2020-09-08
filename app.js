@@ -30,11 +30,6 @@ app.use("/", dialogFlowRouter);
 app.use("/", fulfillmentRoutes);
 app.use("/index", indexRouter);
 
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  next(createError(404));
-});
-
 // error handler
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development
@@ -56,5 +51,11 @@ if (process.env.NODE_ENV === "production") {
     );
   });
 }
+
+// catch 404 and forward to error handler
+
+// app.use(function (req, res, next) {
+//   next(createError(404));
+// });
 
 module.exports = app;
